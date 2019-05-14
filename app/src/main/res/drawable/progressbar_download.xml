@@ -1,0 +1,66 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- background -->
+    <item android:id="@android:id/background">
+        <shape>
+
+            <!-- 圆角 -->
+            <corners
+                android:bottomLeftRadius="5dp"
+                android:bottomRightRadius="5dp"
+                android:topLeftRadius="5dp"
+                android:topRightRadius="5dp" />
+
+            <solid android:color="#f6f6f6" />
+
+            <stroke
+                android:width="0.1dip"
+                android:color="#3366cc" />
+        </shape>
+    </item>
+
+    <!-- progress -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+
+                <!-- 圆角 -->
+                <corners
+                    android:bottomLeftRadius="5dp"
+                    android:bottomRightRadius="5dp"
+                    android:topLeftRadius="5dp"
+                    android:topRightRadius="5dp" />
+
+                <gradient
+                    android:angle="0"
+                    android:endColor="#3366cc"
+                    android:startColor="#3366cc" />
+
+                <stroke
+                    android:width="0.1dip"
+                    android:color="#3366cc" />
+            </shape>
+        </clip>
+    </item>
+
+    <!-- second progress 二级进度（缓冲进度/视频用） -->
+    <item android:id="@android:id/secondaryProgress">
+        <clip>
+            <shape>
+                <corners
+                    android:bottomLeftRadius="5dp"
+                    android:bottomRightRadius="5dp"
+                    android:topLeftRadius="5dp"
+                    android:topRightRadius="5dp" />
+
+                <gradient
+                    android:angle="0"
+                    android:centerColor="#ffffff"
+                    android:centerY="0.75"
+                    android:endColor="#ffffff"
+                    android:startColor="#ffffff" />
+            </shape>
+        </clip>
+    </item>
+
+</layer-list>

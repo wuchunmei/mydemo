@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <!--通用颜色-->
+    <color name="common_ffffffff">#ffffffff</color>
+    <color name="common_ff000000">#ff000000</color>
+    <color name="common_00000000">#00000000</color>
+    <color name="common_88000000">#88000000</color>
+    <color name="common_ffd4d4d4">#ffd4d4d4</color>
+    <color name="common_ff333333">#ff333333</color>
+    <color name="common_fff16027">#fff16027</color>
+    <color name="common_ffef5214">#ffef5214</color>
+    <color name="common_ff919191">#ff919191</color>
+    <color name="common_ffe1e1e1">#ffe1e1e1</color>
+    <color name="common_ffefeff4">#ffefeff4</color>
+    <color name="common_fff5f5f5">#fff5f5f5</color>
+    <color name="common_ffd2d2d2">#ffd2d2d2</color>
+    <color name="common_ff0000ff">#ff0000ff</color>
+    <color name="common_ff00ff00">#ff00ff00</color>
+    <color name="common_ffffff00">#FFFFFF00</color>
+    <color name="common_ffff0000">#ffff0000</color>
+    <color name="common_d6d6d6">#d6d6d6</color>
+    <color name="common_ff6600">#ff6600</color>
+    <color name="common_33000000">#33000000</color>
+    <color name="common_ffc1c1c1">#ffc1c1c1</color>
+    <color name="text_black">#363636</color>
+    <color name="dark_gray_1">#5a5a5a</color>
+    <color name="app_green">#03dfc3</color>
+    <color name="text_gray">#9a9a9a</color>
+</resources>

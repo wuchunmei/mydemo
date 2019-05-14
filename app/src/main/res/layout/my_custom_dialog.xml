@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <!-- 只有关闭按钮  标题+内容是滚动 -->
+    <include layout="@layout/my_custom_dialog_agree" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/oneway_popup_bg"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:visibility="gone">
+
+        <ImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="-5dp"
+            android:layout_marginRight="10dp"
+            android:background="@null"
+            android:padding="10dp"
+            android:src="@drawable/facilities_close" />
+
+        <TextView
+            android:id="@+id/tvDescription_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="姓名填写说明"
+            android:textColor="#484848"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:id="@+id/sv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="10dp"
+                    android:text="暧昧主题大床房"
+                    android:textColor="#494c61"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- 标题 -->
+
+    <LinearLayout
+        android:id="@+id/llTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="60dp"
+        android:background="@mipmap/chat_new_bg_icon"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11dp"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:text="title"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:visibility="gone" />
+        <!-- 画线 -->
+
+        <View
+            android:id="@+id/v_title_line"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/common_33000000"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_update_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="更新时间"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_update"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_update_content_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="更新内容:"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_update_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- 密码 -->
+
+        <LinearLayout
+            android:id="@+id/llPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/setup_click_bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="请输入密码"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@drawable/v_line_icon"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/imgClear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:padding="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/setup_click_delete"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="手机号码"
+                android:textColor="@color/common_33000000"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请输入手机号"
+                android:inputType="number"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/common_33000000"
+                android:textCursorDrawable="@drawable/v_line_icon"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_code_bg"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="获取验证码"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/llPhoneLine"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/common_33000000" />
+
+        <LinearLayout
+            android:id="@+id/llVerify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="验证码"
+                android:textColor="@color/common_33000000"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/etVerify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请输入验证码"
+                android:inputType="number"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/common_33000000"
+                android:textCursorDrawable="@drawable/v_line_icon"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/vVerify"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/common_33000000"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/vBtnLine"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/common_33000000"
+            android:visibility="gone" />
+        <!-- 按钮 -->
+
+        <LinearLayout
+            android:id="@+id/llBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="47dp"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btn_ok"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:text="确定"
+                android:padding="10dp"
+                android:textColor="@color/common_ff000000"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/v_ok_cancel_line"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/common_33000000"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:padding="10dp"
+                android:text="取消"
+                android:textStyle="bold"
+                android:textColor="@color/common_00000000"
+                android:textSize="14sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

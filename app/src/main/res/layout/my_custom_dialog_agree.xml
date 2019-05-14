@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llAgreeAndRefuse"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/chat_new_bg_icon"
+    android:orientation="vertical"
+    android:visibility="gone"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="27dp"
+        android:paddingRight="27dp"
+        android:paddingBottom="32dp"
+        android:orientation="vertical"
+     >
+
+
+        <TextView
+            android:id="@+id/tvTitleAgree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="38dp"
+            android:layout_marginTop="28dp"
+            android:gravity="center"
+            android:text="重要提示"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvContentAgree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="10dp"
+                    android:text="尊敬的会员，您好！您帮我司推广旅游产品获得相应玩币返利收入属于个人劳务报酬所得，根据个人所得税法规定，玩币返利收入应按个人劳务报酬所得向税务机关缴纳个人所得税，由本公司代扣代缴个人所得税，因此需要您提供您的身份证信息，以便我司代缴个人所得税。谢谢您的配合与理解！"
+                    android:textColor="#333333"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvIsAgree"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/selector_dialog_agree_and_refuse"
+                    android:drawablePadding="17dp"
+                    android:gravity="center_vertical"
+                    android:text="我同意"
+                    android:textColor="#333333"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="31dp"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnRefuse"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/withdraw_btn_no"
+                android:text="拒绝"
+                android:textColor="@color/common_33000000"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btnAgree"
+                android:layout_width="0dp"
+                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@mipmap/withdraw_btn_yes"
+                android:text="同意"
+                android:textColor="@color/common_ffffffff"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

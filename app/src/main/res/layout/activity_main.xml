@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.wofang.demo.view.CustomViewPager
+        android:id="@+id/main_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+    <RadioGroup
+        android:id="@+id/tabs_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/tab_layout_bg_layer_list"
+        android:orientation="horizontal">
+
+    <RadioButton
+        android:id="@+id/home_tab"
+        style="@style/TabRadioButton"
+        android:checked="true"
+        android:drawableTop="@drawable/tab_home_drawable_select"
+        android:text="首页" />
+
+    <RadioButton
+        android:id="@+id/order_tab"
+        style="@style/TabRadioButton"
+        android:drawableTop="@drawable/tab_order_drawable_select"
+        android:text="小说" />
+
+    <RadioButton
+        android:id="@+id/me_tab"
+        style="@style/TabRadioButton"
+        android:drawableTop="@drawable/tab_me_drawable_select"
+        android:text="我的" />
+
+    </RadioGroup>
+
+
+
+</LinearLayout>
+
