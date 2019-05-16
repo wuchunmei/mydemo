@@ -20,11 +20,13 @@ import android.widget.RadioGroup;
 import com.wofang.demo.Dialog.MyCustomDialog;
 import com.wofang.demo.base.BaseActivity;
 import com.wofang.demo.base.BaseView;
+import com.wofang.demo.bean.HouseListResult;
 import com.wofang.demo.fragment.EBookFragment;
 import com.wofang.demo.fragment.HomeFragment;
 import com.wofang.demo.fragment.MyFragment;
 import com.wofang.demo.mydemo.R;
 import com.wofang.demo.presenter.MainPresenter;
+import com.wofang.demo.utils.LogUtil;
 import com.wofang.demo.utils.ToastUtils;
 import com.wofang.demo.utils.UpdateAPPUtils;
 import com.wofang.demo.view.CustomViewPager;
@@ -46,9 +48,7 @@ public class MainActivity extends BaseActivity<MainPresenter, BaseView> {
     private Unbinder mUnbinder;
     private List<Fragment> fragmentList = new ArrayList<>();
     private FragmentPagerAdapter mAdapter;
-
     private static final int INSTALL_PERMISS_CODE = 1000; // 未知来源权限申请请求码
-
     private File mFile;
 
 

@@ -3,17 +3,19 @@ package com.wofang.demo.network.request;
 
 
 
-import com.wofang.demo.bean.requstbean.UpdateRequest;
-import com.wofang.demo.bean.responsebean.CheckNewVersionResponse;
+import com.wofang.demo.bean.CheckNewVersionResponse;
+import com.wofang.demo.bean.HouseListResult;
 import com.wofang.demo.network.response.ResponseResult;
+
+import java.util.Map;
 
 import io.reactivex.Observable;
 
 import okhttp3.ResponseBody;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 import retrofit2.http.Streaming;
 import retrofit2.http.Url;
 
@@ -25,11 +27,21 @@ import retrofit2.http.Url;
  */
 
 public interface Request {
-    String HOST = "http://hub.naliwan.com/";
+    String HOST = "http://192.168.0.199:7392/";
 
     @POST("system/lastVersion")
     Observable<ResponseResult<CheckNewVersionResponse>> checkUpdate(@Query("type") String type);
     @GET
     @Streaming
     Observable<ResponseBody> downApk(@Url String url);
+
+    /**
+     * 房源列表接口
+     *
+     * @param map  封装的map
+     * @return BaseResponse
+     */
+    @POST("product/hotel/getHotelList")
+    Observable<ResponseResult<HouseListResult>> getHouseList(@QueryMap Map<String, String> map);
+
 }

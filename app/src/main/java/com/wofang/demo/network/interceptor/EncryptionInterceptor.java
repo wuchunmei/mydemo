@@ -1,34 +1,17 @@
 package com.wofang.demo.network.interceptor;
 
-import android.annotation.SuppressLint;
-import android.util.Log;
 
-import com.google.gson.Gson;
-import com.wofang.demo.bean.requstbean.RequstEntity;
-import com.wofang.demo.network.util.ParamAlias;
 import com.wofang.demo.utils.LogUtil;
 import com.wofang.demo.utils.MD5SimpleUtils;
-import com.wofang.demo.utils.MD5Utils;
 import com.wofang.demo.utils.ToMapUtils;
-import com.wofang.demo.utils.ToastUtils;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.IOException;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import okhttp3.FormBody;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.MediaType;
-import okhttp3.MultipartBody;
 import okhttp3.Request;
 
 import okhttp3.RequestBody;

@@ -287,7 +287,7 @@ public class CommonInterceptor implements Interceptor {
             }
             System.out.println(url+"?"+text);
             RequestBody requestBody = builder.build();
-            return request.newBuilder().method(request.method(),requestBody).url(url).build();
+            return request.newBuilder().addHeader("Connection","close").method(request.method(),requestBody).url(url).build();
         } else {
             return request.newBuilder().method(request.method(), newRequestBody).build();
         }

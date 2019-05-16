@@ -1,4 +1,4 @@
-package com.wofang.demo.bean.responsebean;
+package com.wofang.demo.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;

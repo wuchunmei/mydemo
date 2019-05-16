@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">mydemo</string>
+    <item name="tag_view_hold" type="id" />
+    <string name="load_more_before">加载更多</string>
+    <string name="load_more">正在加载&#8230;</string>
+    <string name="load_more_complete">已经到达底部了</string>
 </resources>

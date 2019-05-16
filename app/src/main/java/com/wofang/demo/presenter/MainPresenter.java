@@ -1,15 +1,12 @@
 package com.wofang.demo.presenter;
-import android.app.Dialog;
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import com.wofang.demo.Dialog.CheckNewAppDialog;
-import com.wofang.demo.Dialog.MyCustomDialog;
 import com.wofang.demo.Dialog.ProgressDialog;
 import com.wofang.demo.base.BasePresenter;
 import com.wofang.demo.base.BaseView;
-import com.wofang.demo.bean.responsebean.CheckNewVersionResponse;
+import com.wofang.demo.bean.CheckNewVersionResponse;
 import com.wofang.demo.mydemo.R;
 import com.wofang.demo.network.download.DownLoadRetrofitUtils;
 import com.wofang.demo.network.download.DownloadListener;
@@ -21,10 +18,8 @@ import com.wofang.demo.utils.LogUtil;
 import com.wofang.demo.utils.ToastUtils;
 import com.wofang.demo.utils.UpdateAPPUtils;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
 import io.reactivex.disposables.Disposable;
 
 
@@ -49,7 +44,8 @@ public class MainPresenter extends BasePresenter<BaseView> {
 
     @Override
     public void onCreate() {
-        checkUpdate();
+        //检查版本更新
+//        checkUpdate();
     }
 
     @Override
@@ -61,7 +57,6 @@ public class MainPresenter extends BasePresenter<BaseView> {
             }
         }
     }
-
     private void checkUpdate() {
         RetrofitWrapper.getRequest().checkUpdate("0")
                 .compose(SchedulerProvider.getInstance().applySchedulers())
