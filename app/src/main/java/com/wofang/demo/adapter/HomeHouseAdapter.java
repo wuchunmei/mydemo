@@ -40,7 +40,7 @@ public class HomeHouseAdapter extends CommonRecyclerViewAdapter<HouseListResult.
                 viewHolder.setText(R.id.name_tv,item.getName());
                 viewHolder.setText(R.id.des,item.getIntroduction());
                 ImageView imageView = viewHolder.getView(R.id.img);
-                GlideUtils.disPlayerImageView(mContext,imageView,"http://static.wodujia.com/"+item.getProductImage(),R.mipmap.icon_img_default);
+//                GlideUtils.disPlayerImageView(mContext,imageView,"http://static.wodujia.com/"+item.getProductImage(),R.mipmap.icon_img_default);
             }
         }
     }

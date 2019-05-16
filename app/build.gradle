@@ -62,4 +62,5 @@ dependencies {
     // 下载如有需要可以添加额外的监听器
     implementation 'eason.linyuzai:eason-download-listeners:1.0.1'
     implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'com.blankj:utilcode:1.23.7'
 }

@@ -15,7 +15,7 @@ import com.wofang.demo.mydemo.R;
 import com.wofang.demo.base.BaseFragment;
 import com.wofang.demo.base.BaseView;
 import com.wofang.demo.presenter.HomeFragmentPresenter;
-import com.wofang.demo.utils.ConstantUtil;
+import com.wofang.demo.constant.LoadMoreConstant;
 import com.wofang.demo.recycler.LoadRecyclerView;
 import com.wofang.demo.recycler.MyLinearLayoutManager;
 
@@ -83,7 +83,7 @@ public class HomeFragment extends BaseFragment<HomeFragmentPresenter,BaseView>im
                 break;
                 case HomeFragmentPresenter.CODE_LOAD_NO_MORE:
                     isAbleLoading = false;
-                    reflashFooterView(ConstantUtil.LOAD_MORE_COMPLETE);
+                    reflashFooterView(LoadMoreConstant.LOAD_MORE_COMPLETE);
                 default:
                     break;
         }
@@ -98,15 +98,15 @@ public class HomeFragment extends BaseFragment<HomeFragmentPresenter,BaseView>im
 
     @Override
     public void onLoad() {
-        if (listBeans.size() >= ConstantUtil.PAGE_SIZE && isAbleLoading ){
+        if (listBeans.size() >= LoadMoreConstant.PAGE_SIZE && isAbleLoading ){
             if(null != mPresenter){
                 pageIndex = pageIndex + 1;
                 mPresenter.getHouseList(String.valueOf(pageIndex));
             }
             mAutoSwipeRefreshLayout.setRefreshing(false);
-            reflashFooterView(ConstantUtil.LOAD_MORE);
+            reflashFooterView(LoadMoreConstant.LOAD_MORE);
         }else {
-            reflashFooterView(ConstantUtil.LOAD_MORE_COMPLETE);
+            reflashFooterView(LoadMoreConstant.LOAD_MORE_COMPLETE);
         }
     }
 
@@ -120,7 +120,7 @@ public class HomeFragment extends BaseFragment<HomeFragmentPresenter,BaseView>im
         }
         // 取消加载
         mAutoSwipeRefreshLayout.setRefreshing(false);
-        reflashFooterView(ConstantUtil.LOAD_MORE_BEFORE);
+        reflashFooterView(LoadMoreConstant.LOAD_MORE_BEFORE);
     }
 
     // 自定义setAdapter
@@ -134,11 +134,11 @@ public class HomeFragment extends BaseFragment<HomeFragmentPresenter,BaseView>im
 
         // 判断是否已经加载完成
         if (listBeans == null || listBeans.size() <= 0) {
-            reflashFooterView(ConstantUtil.LOAD_MORE_HIDDEN);
-        } else if (listBeans.size() < ConstantUtil.PAGE_SIZE || !isAbleLoading) {
-            reflashFooterView(ConstantUtil.LOAD_MORE_COMPLETE);
+            reflashFooterView(LoadMoreConstant.LOAD_MORE_HIDDEN);
+        } else if (listBeans.size() < LoadMoreConstant.PAGE_SIZE || !isAbleLoading) {
+            reflashFooterView(LoadMoreConstant.LOAD_MORE_COMPLETE);
         } else {
-            reflashFooterView(ConstantUtil.LOAD_MORE_BEFORE);
+            reflashFooterView(LoadMoreConstant.LOAD_MORE_BEFORE);
         }
     }
 
@@ -146,25 +146,25 @@ public class HomeFragment extends BaseFragment<HomeFragmentPresenter,BaseView>im
     private void reflashFooterView(int index) {
         // 重构底部数据
         switch (index) {
-            case ConstantUtil.LOAD_MORE_BEFORE:// 加载前/后
+            case LoadMoreConstant.LOAD_MORE_BEFORE:// 加载前/后
                 mRecyclerView.setLoading(false);
                 mFooter.setShowProgressBar(false);
                 mFooter.setShowFooter(true);
                 mFooter.setTitle(getResources().getString(R.string.load_more_before));
                 break;
-            case ConstantUtil.LOAD_MORE:// 加载中
+            case LoadMoreConstant.LOAD_MORE:// 加载中
                 mRecyclerView.setLoading(false);
                 mFooter.setShowProgressBar(true);
                 mFooter.setShowFooter(true);
                 mFooter.setTitle(getResources().getString(R.string.load_more));
                 break;
-            case ConstantUtil.LOAD_MORE_COMPLETE:// 不允许加载
+            case LoadMoreConstant.LOAD_MORE_COMPLETE:// 不允许加载
                 mRecyclerView.setLoading(false);
                 mFooter.setShowProgressBar(false);
                 mFooter.setShowFooter(true);
                 mFooter.setTitle(getResources().getString(R.string.load_more_complete));
                 break;
-            case ConstantUtil.LOAD_MORE_HIDDEN:// 隐藏
+            case LoadMoreConstant.LOAD_MORE_HIDDEN:// 隐藏
                 mRecyclerView.setLoading(false);
                 mFooter.setShowProgressBar(false);
                 mFooter.setShowFooter(false);

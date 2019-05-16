@@ -1,9 +1,9 @@
-package com.wofang.demo.utils;
+package com.wofang.demo.constant;
 
 /**
  * 静态常量管理
  */
-public class ConstantUtil {
+public class LoadMoreConstant {
     /**
      * 底部加载更多状态
      */
