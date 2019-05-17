@@ -13,6 +13,7 @@ import android.os.StatFs;
 import android.telephony.TelephonyManager;
 import android.text.ClipboardManager;
 import android.text.TextUtils;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebView;
@@ -707,5 +708,15 @@ public class CommonUtil {
 		}
 
 		return dstr;
+	}
+
+	/**
+	 * @param context
+	 * @param dpVal
+	 * @return
+	 */
+	public static int dp2px(Context context, float dpVal) {
+		return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+				dpVal, context.getResources().getDisplayMetrics());
 	}
 }

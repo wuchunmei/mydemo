@@ -11,7 +11,7 @@ import android.view.MotionEvent;
  * 自定义ViewPager
  *
  * @author wcm
- * @date 2019/05/6
+ * @date 2019/05/16
  */
 public class CustomViewPager extends ViewPager {
 
