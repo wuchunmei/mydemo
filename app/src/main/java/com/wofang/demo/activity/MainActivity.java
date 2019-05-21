@@ -1,7 +1,6 @@
 package com.wofang.demo.activity;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -24,13 +23,14 @@ import android.widget.RadioGroup;
 import com.blankj.utilcode.constant.PermissionConstants;
 import com.blankj.utilcode.util.PermissionUtils;
 import com.wofang.demo.Dialog.MyCustomDialog;
+import com.wofang.demo.R;
 import com.wofang.demo.base.BaseActivity;
 import com.wofang.demo.base.BaseView;
 import com.wofang.demo.constant.PermissionCode;
 import com.wofang.demo.fragment.EBookFragment;
 import com.wofang.demo.fragment.HomeFragment;
 import com.wofang.demo.fragment.MyFragment;
-import com.wofang.demo.mydemo.R;
+
 import com.wofang.demo.presenter.MainPresenter;
 import com.wofang.demo.utils.LogUtil;
 import com.wofang.demo.utils.ToastUtils;
