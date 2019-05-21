@@ -4,6 +4,10 @@ package com.wofang.demo.network.request;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.franmontiel.persistentcookiejar.ClearableCookieJar;
+import com.franmontiel.persistentcookiejar.PersistentCookieJar;
+import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
+import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
 import com.wofang.demo.base.BaseApplication;
 import com.wofang.demo.network.converter.NullOnEmptyConverterFactory;
 import com.wofang.demo.network.interceptor.CommonInterceptor;
@@ -12,6 +16,7 @@ import com.wofang.demo.network.request.Request;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.wofang.demo.store.ConfigInfo;
+import com.wofang.demo.utils.LogUtil;
 import com.wofang.demo.utils.NetWorkUtils;
 
 
@@ -50,11 +55,10 @@ public class RetrofitWrapper {
      * 初始化必要对象和参数
      */
     static  {
-
         /**
          * 云端响应头拦截器，用来配置缓存策略
          */
-        Interceptor mRewriteCacheControlInterceptor = chain -> {
+       /* Interceptor mRewriteCacheControlInterceptor = chain -> {
             // 拦截器获取请求
             okhttp3.Request request = chain.request();
             // 服务器的缓存策略
@@ -79,7 +83,7 @@ public class RetrofitWrapper {
                         .build();
             } else {
                 // 离线缓存
-                /*
+                *//*
                  * only-if-cached:(仅为请求标头)
                  *　 请求:告知缓存者,我希望内容来自缓存，我并不关心被缓存响应,是否是新鲜的.
                  * max-stale:
@@ -89,7 +93,7 @@ public class RetrofitWrapper {
                  *   请求:强制响应缓存者，根据该值,校验新鲜性.即与自身的Age值,与请求时间做比较.如果超出max-age值,
                  *   则强制去服务器端验证.以确保返回一个新鲜的响应.
                  *   响应:同上.
-                 */
+                 *//*
                 // 需要服务端配合处理缓存请求头，不然会抛出： HTTP 504 Unsatisfiable Request (only-if-cached)
                 return originalResponse.newBuilder()
                         .removeHeader("Pragma")
@@ -111,11 +115,19 @@ public class RetrofitWrapper {
                     .addHeader("Cookie", jsessionid)
                     .build();
             return chain.proceed(build);
-        };
+        };*/
 
         //打印日志
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+            @Override
+            public void log(String message) {
+                LogUtil.d("message>>" + message);
+            }
+        });
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        ClearableCookieJar cookieJar =
+                new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(BaseApplication.getApplication()));
+
         String baseUrl = Request.HOST;
         //解决Http请求中的日期转换问题
         Gson gson = new GsonBuilder()
@@ -128,13 +140,15 @@ public class RetrofitWrapper {
                 .connectTimeout(CONNECTION_TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
                 // 没网的情况下
-                .addInterceptor(mRewriteCacheControlInterceptor)
+//                .addInterceptor(mRewriteCacheControlInterceptor)
                 // 有网的情况下
-                .addNetworkInterceptor(mRewriteCacheControlInterceptor)
+//                .addNetworkInterceptor(mRewriteCacheControlInterceptor)
                 .addInterceptor(logging)
-                .addInterceptor(headerInterceptor)
+//                .addInterceptor(headerInterceptor)
+                //公共拦截器，加入sign的公共参数
                 .addNetworkInterceptor(new CommonInterceptor())
-                .cache(cache)
+                .cookieJar(cookieJar)
+//                .cache(cache)
                 .build();
 
         // 初始化Retrofit

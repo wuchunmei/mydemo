@@ -44,6 +44,11 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+        <!--缓存的provider -->
+        <provider
+            android:name=".cache.CacheContentProvider"
+            android:authorities="com.wofang.demo.mydemo.provider.cache"
+            android:exported="false" />
     </application>
 
 

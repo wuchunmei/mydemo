@@ -29,6 +29,7 @@ allprojects {
             name 'Google'
         }
         maven { url 'https://dl.bintray.com/umsdk/release' }
+        maven { url "https://jitpack.io" }
     }
 }
 
