@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.wofang.demo.mydemo.R;
+import com.wofang.demo.R;
 
 
 /**

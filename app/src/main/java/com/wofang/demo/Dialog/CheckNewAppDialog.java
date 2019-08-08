@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.wofang.demo.mydemo.R;
+import com.wofang.demo.R;
 
 
 public class CheckNewAppDialog extends Dialog {

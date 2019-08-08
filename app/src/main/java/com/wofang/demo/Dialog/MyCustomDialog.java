@@ -16,7 +16,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.wofang.demo.mydemo.R;
+import com.wofang.demo.R;
 import com.wofang.demo.utils.CommonUtil;
 
 

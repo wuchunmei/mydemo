@@ -4,11 +4,11 @@ import android.content.Context;
 import android.widget.ImageView;
 
 
+import com.wofang.demo.R;
 import com.wofang.demo.recycler.CommonRecyclerViewAdapter;
 import com.wofang.demo.recycler.CommonRecyclerViewHolder;
 import com.wofang.demo.recycler.CommonViewHolder;
 import com.wofang.demo.bean.HouseListResult;
-import com.wofang.demo.mydemo.R;
 import com.wofang.demo.recycler.Footer;
 import com.wofang.demo.utils.GlideUtils;
 

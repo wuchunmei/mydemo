@@ -4,4 +4,16 @@
     <string name="load_more_before">加载更多</string>
     <string name="load_more">正在加载&#8230;</string>
     <string name="load_more_complete">已经到达底部了</string>
+    <!--zxing-->
+    <string name="msg_camera_framework_bug">相机被占用或没有相机权限，请检查</string>
+    <string name="button_ok">退出</string>
+    <string name="scan_code">扫一扫</string>
+    <string name="open_flash">打开闪光灯</string>
+    <string name="close_flash">关闭闪光灯</string>
+    <string name="gallery">相册</string>
+    <string name="scan_failed_tip">图片解析失败，换个图片试试.</string>
+
+    <string name="flash_open">开启闪光灯</string>
+    <string name="flash_close">关闭闪光灯</string>
+    <string name="tips_scan">将二维码/条码放入框内，即可自动扫描</string>
 </resources>

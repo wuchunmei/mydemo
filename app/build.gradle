@@ -63,4 +63,6 @@ dependencies {
     implementation 'eason.linyuzai:eason-download-listeners:1.0.1'
     implementation 'com.blankj:utilcode:1.23.7'
     implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+    implementation 'com.yanzhenjie:permission:2.0.0-rc4'
+    implementation project(':zbar')
 }

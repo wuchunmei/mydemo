@@ -16,7 +16,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
-import com.wofang.demo.mydemo.R;
+import com.wofang.demo.R;
 
 import java.text.NumberFormat;
 
@@ -313,7 +313,7 @@ public class ProgressDialog extends AlertDialog {
 	 * number is progressing.
 	 * 
 	 * @param format
-	 *            A string passed to {@link String#format String.format()}; use
+	 *            A string passed to {@linkString.format()}; use
 	 *            "%1d" for the current number and "%2d" for the maximum. If
 	 *            null, nothing will be shown.
 	 */

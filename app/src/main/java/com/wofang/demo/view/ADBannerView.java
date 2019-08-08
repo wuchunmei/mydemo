@@ -23,7 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
-import com.wofang.demo.mydemo.R;
+import com.wofang.demo.R;
 import com.wofang.demo.utils.CommonUtil;
 import com.wofang.demo.utils.GlideUtils;
 import java.util.ArrayList;

@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 27
+        consumerProguardFiles 'proguard-rules.pro'
+        versionCode 20
+        versionName "1.1.10"
+        ndk {
+//          此处可指定ABI，显著减小APK体积。不指定则默认编译所有平台so库
+            abiFilters "armeabi"
+        }
+    }
+
+    sourceSets {
+        main {
+            jni.srcDirs = []
+            jniLibs.srcDirs 'src/main/jniLibs'
+        }
+    }
+
+    def isBuildSo = false
+//    def isBuildSo = true
+    if (isBuildSo) {
+        tasks.withType(JavaCompile) {
+            compileTask -> compileTask.dependsOn ndkBuild
+        }
+    }
+
+}
+
+task ndkBuild(type: Exec) {
+    doFirst {
+        delete(file('src/main/jniLibs'))
+    }
+    def jniLibsDir = file('src/main/jniLibs').absolutePath
+    commandLine 'ndk-build.cmd', '-C', file('src/main/jni').absolutePath, "NDK_LIBS_OUT=$jniLibsDir"
+    doLast {
+        delete(file('src/main/obj'))
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:27.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+}
+
+//apply from: 'bintray.gradle'

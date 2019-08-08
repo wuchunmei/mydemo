@@ -9,7 +9,7 @@ import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.widget.TextView;
 
-import com.wofang.demo.mydemo.R;
+import com.wofang.demo.R;
 
 
 /**

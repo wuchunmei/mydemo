@@ -6,12 +6,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 
+import com.wofang.demo.R;
 import com.wofang.demo.adapter.HomeHouseAdapter;
 import com.wofang.demo.recycler.AutoSwipeRefreshLayout;
 import com.wofang.demo.recycler.Footer;
 import com.wofang.demo.recycler.RecyclerViewScrollListener;
 import com.wofang.demo.bean.HouseListResult;
-import com.wofang.demo.mydemo.R;
 import com.wofang.demo.base.BaseFragment;
 import com.wofang.demo.base.BaseView;
 import com.wofang.demo.presenter.HomeFragmentPresenter;

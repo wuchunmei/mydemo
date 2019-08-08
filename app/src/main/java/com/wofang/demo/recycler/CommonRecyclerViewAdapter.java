@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.wofang.demo.mydemo.R;
+import com.wofang.demo.R;
 import com.wofang.demo.utils.ClickUtil;
 
 import java.util.ArrayList;

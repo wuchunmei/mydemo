@@ -29,4 +29,16 @@
     <color name="dark_gray_1">#5a5a5a</color>
     <color name="app_green">#03dfc3</color>
     <color name="text_gray">#9a9a9a</color>
+    <color name="viewfinder_mask">#50000000</color>
+    <color name="react">#ffff00</color>
+    <color name="scanLineColor">#f9ff52</color>
+    <color name="defaultColor">#ffffff</color>
+    <color name="contents_text">#000000</color>
+    <color name="encode_view">#ffffff</color>
+    <color name="possible_result_points">#ffbd21</color>
+    <color name="result_minor_text">#c0c0c0</color>
+    <color name="result_points">#99cc00</color>
+    <color name="result_text">#ffffff</color>
+    <color name="result_view">#000000</color>
+    <color name="status_text">#ffffff</color>
 </resources>
